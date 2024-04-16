@@ -39,7 +39,7 @@ function handelcilckmenu (){
        <>
         {isusesearch?
          <div className='md:hidden flex items-center justify-center gap-4 p-4 text-red-600'>
-          <FaSearch size='1.5rem' color='#970A20' onClick={handelsearch} className='cursor-pointer order-1'/>
+          <IoClose size='2rem' color='#970A20' onClick={handelsearch} className='cursor-pointer order-1'/>
           <input  className='w-40 h-8 rounded-lg  ' value={isinputsearch} type="text" onChange={handleInputSearch} />
          </div>
          :
@@ -59,7 +59,7 @@ function handelcilckmenu (){
         {isusesearch? (
           <>
               <input  className='w-80 h-8 rounded-lg  ' value={isinputsearch} type="text" onChange={handleInputSearch} />
-              <FaSearch size='2.5rem' color='#970A20' onClick={handelsearch} className='cursor-pointer'/>
+              <IoClose size='2.5rem' color='#970A20' onClick={handelsearch} className='cursor-pointer'/>
           </>
         ):(
          <>
