@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       {/* <Navbar /> */}
       {/* <Footer /> */}
-      <MovesPages />
+      {/* <MovesPages /> */}
     </div>
   );
 }
