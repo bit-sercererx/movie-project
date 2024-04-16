@@ -20,12 +20,12 @@ function handelcilckmenu (){
 }
 
   return (
-    <div className=' border-b-2 bg-green-500 border-blue-800 h-16 flex items-center justify-between w-full md:w-full lg:w-11/12 absolute top-0 md:absolute lg:top-2 lg:left-14 '>
+    <div className=' border-b-2 bg-green-500 border-blue-800 h-16 flex items-center justify-between w-full md:w-full lg:w-11/12 absolute top-0 md:absolute lg:top-2 lg:left-14 z-20'>
       <div className='p-4 text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-red-600 font-bold'>logo</div>
 
        <div className='md:hidden'>
        {isclickmenu ?
-      <div className='w-44 h-80 bg-slate-800 rounded-bl-xl absolute top-0 right-0 flex flex-col items-center justify-center ' >
+      <div className='w-44 h-80 bg-darkBlue rounded-bl-xl absolute top-0 right-0 flex flex-col items-center justify-center ' >
         <IoClose onClick={handelcilckmenu} color='white' size='2rem' className='absolute top-1 right-1 cursor-pointer'/>
         <ul className='flex flex-col items-center justify-center gap-6 text-white' >
         <li className='li-hover-effect cursor-pointer'>Home</li>

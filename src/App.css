@@ -1,92 +1,72 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: #030a14;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+#lien {
+  background-color: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(3, 10, 20, 0) 100%
+  );
 }
-
-.li-hover-effect {
-  position: relative;
+#background {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0) 0%,
+    rgba(2, 5, 28, 0.7) 39%,
+    rgba(3, 10, 20, 1) 100%
+  );
 }
-
-.li-hover-effect::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #B00A24;
-  transform-origin: center;
-  transform: translate(-50%, 0) scaleX(0);
-  transition: transform 0.5s ease-in-out;
+::-webkit-scrollbar {
+  height: 10px;
 }
-
-.li-hover-effect:hover::before {
-  transform: translate(-50%, 0) scaleX(1);
+::-webkit-scrollbar-track {
+  background-color: #030a14;
 }
-
-#c1{
+::-webkit-scrollbar-thumb {
+  background-color: #b00a24;
+}
+#c1 {
   background-image: url("./Componets/images/c1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-#c2{
+#c2 {
   background-image: url("./Componets/images/c2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-#c3{
+#c3 {
   background-image: url("./Componets/images/c3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-#c4{
+#c4 {
   background-image: url("./Componets/images/c4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-#c5{
+#c5 {
   background-image: url("./Componets/images/c5.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-#c6{
+#c6 {
   background-image: url("./Componets/images/c6.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-#c7{
+#c7 {
   background-image: url("./Componets/images/c7.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-#c8{
+#c8 {
   background-image: url("./Componets/images/c8.jpg");
   background-repeat: no-repeat;
   background-size: cover;
