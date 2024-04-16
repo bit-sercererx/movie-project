@@ -49,6 +49,48 @@
   transform: translate(-50%, 0) scaleX(1);
 }
 
+#c1{
+  background-image: url("./Componets/images/c1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#c2{
+  background-image: url("./Componets/images/c2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#c3{
+  background-image: url("./Componets/images/c3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#c4{
+  background-image: url("./Componets/images/c4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#c5{
+  background-image: url("./Componets/images/c5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#c6{
+  background-image: url("./Componets/images/c6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#c7{
+  background-image: url("./Componets/images/c7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#c8{
+  background-image: url("./Componets/images/c8.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 @keyframes App-logo-spin {
   from {
