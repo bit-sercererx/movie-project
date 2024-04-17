@@ -19,7 +19,7 @@ function App() {
       <Home />
       {/* <Footer /> */}
       {/* <MovesPages /> */}
-      <Genres />
+      {/* <Genres /> */}
     </div>
   );
 }

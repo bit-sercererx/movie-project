@@ -44,6 +44,10 @@ const Home=()=>{
        <h1 className="text-lg pl-6 pt-2">Popular Movies</h1>
                <MovieList movies={popularMove} /></div>
              {/* Trending Movies */}
+             <div className="mt-6">
+       <h1 className="text-lg pl-6 pt-2">Trending Movies</h1>
+               <MovieList movies={popularMove} /></div>
+            
             
         </div>
     )

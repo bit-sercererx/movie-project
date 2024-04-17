@@ -1,8 +1,9 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import { thunk } from "redux-thunk";
 
 let intiialState={
     popularMovie:[],
+    newPlaying:[],
     loading:false,
 
 
@@ -18,6 +19,19 @@ switch (action.type){
 }
 return state
 }
+
+const newPlayingReduser=(state=intiialState,action)=>{
+    switch(action.type){
+        case "newplaying/get":
+            return {...state, newPlaying:action.paylod}
+            default:
+                break;
+    }
+    return state
+
+}
+
+
 export function getPopularMovie(){
     return function(dispatch){
         dispatch({type:"movie/loading"});
@@ -29,5 +43,6 @@ export function getPopularMovie(){
         })
     }
 }
+// const rootReducer=combineReducers({popularMovieReduser,newPlayingReduser});
 const store=createStore(popularMovieReduser,applyMiddleware(thunk));
 export default store;
