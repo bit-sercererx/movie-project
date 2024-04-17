@@ -1,48 +1,91 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { thunk } from "redux-thunk";
 
-let intiialState={
-    popularMovie:[],
-    newPlaying:[],
-    loading:false,
+let popularMovieintiialState = {
+  popularMovie: [],
+  loading: false,
+};
 
-
-}
-const popularMovieReduser=(state=intiialState,action)=>{
-switch (action.type){
+let TopRatedintiialstate = {
+  TopRated: [],
+};
+let allmovieintiialstate = {
+  allmovie: [],
+};
+const popularMovieReduser = (state = popularMovieintiialState, action) => {
+  switch (action.type) {
     case "movie/get":
-    return{...state , popularMovie:action.paylod, loading: false}
-    case"movie/loading":
-    return{...state , loading:true}
+      return { ...state, popularMovie: action.paylod, loading: false };
+    case "movie/loading":
+      return { ...state, loading: true };
     default:
-        break;
-}
-return state
+      break;
+  }
+  return state;
+};
+
+const TopRatedReduser = (state = TopRatedintiialstate, action) => {
+  switch (action.type) {
+    case "TopRated/get":
+      return { ...state, TopRated: action.paylod };
+    default:
+      break;
+  }
+  return state;
+};
+
+const allmovieReduser = (state = allmovieintiialstate, action) => {
+  switch (action.type) {
+    case "allmovie/get":
+      return { ...state, allmovie: action.paylod };
+    default:
+      break;
+  }
+  return state;
+};
+export function getAllMovie() {
+  return function (dispatch) {
+    fetch(
+      "https://api.themoviedb.org/3/discover/movie?api_key=9266f5410b8313c95d08ecaa2af0ebe2"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch({ type: "allmovie/get", paylod: data.results });
+        console.log(data.results);
+      });
+  };
 }
 
-const newPlayingReduser=(state=intiialState,action)=>{
-    switch(action.type){
-        case "newplaying/get":
-            return {...state, newPlaying:action.paylod}
-            default:
-                break;
-    }
-    return state
-
+export function getTopRated() {
+  return function (dispatch) {
+    fetch(
+      "https://api.themoviedb.org/3/movie/top_rated?api_key=9266f5410b8313c95d08ecaa2af0ebe2"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch({ type: "TopRated/get", paylod: data.results });
+        // console.log(data.results);
+      });
+  };
 }
 
-
-export function getPopularMovie(){
-    return function(dispatch){
-        dispatch({type:"movie/loading"});
-        fetch("https://api.themoviedb.org/3/movie/popular?api_key=9266f5410b8313c95d08ecaa2af0ebe2")
-        .then ((res)=>res.json())
-        .then((data)=>{
-            dispatch({type:"movie/get",paylod:data.results})
-            console.log(data.results);
-        })
-    }
+export function getPopularMovie() {
+  return function (dispatch) {
+    dispatch({ type: "movie/loading" });
+    fetch(
+      "https://api.themoviedb.org/3/movie/popular?api_key=9266f5410b8313c95d08ecaa2af0ebe2"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch({ type: "movie/get", paylod: data.results });
+        // console.log(data.results);
+      });
+  };
 }
-// const rootReducer=combineReducers({popularMovieReduser,newPlayingReduser});
-const store=createStore(popularMovieReduser,applyMiddleware(thunk));
+const rootReducer = combineReducers({
+  popularMovieReduser,
+  TopRatedReduser,
+  allmovieReduser,
+});
+const store = createStore(rootReducer, applyMiddleware(thunk));
 export default store;
