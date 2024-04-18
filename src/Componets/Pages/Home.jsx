@@ -33,24 +33,23 @@ const Home = () => {
         <div className="flex w-screen">
           <Slider {...settings} className="w-screen h-">
             {popularMove.map((movie) => (
-              <div className=" top-0 flex  items-end h-52 justify-end w-full md:h-64 lg:h-80 z-20">
+              <div className=" top-0 flex  items-end h-52 justify-end w-full md:h-64 lg:h-96 z-20">
                 <div className="w-screen z-30">
+                  {" "}
                   <img
                     src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                     className="w-full lg:blur-sm"
-                  />
-
+                  />{" "}
                   <img
                     src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                    className=" hidden lg:inline lg:absolute lg:w-[90px] lg:top-[10%]  "
+                    className=" hidden lg:block lg:absolute lg:w-[400px] lg:top-[30%] lg:ml-[900px] rounded-md "
                   />
                   <VscDebugStart className="text-4xl border-solid border-[3px] border-white rounded-full p-1 absolute top-[37%] ml-[70%] md:top-[40%] md:text-6xl md:ml-[60%] " />
-
-                  <div className="w-[40%] left-5 ml-[20px] md:ml-[25px] ">
-                    <h1 className="font-bold pb-2 absolute top-[20%] w-96 md:text-3xl md:w-[80%] lg:text-4xl">
+                  <div className="w-[40%] left-5 ml-[20px] md:ml-[50px] md:mt-3 ">
+                    <h1 className="font-bold pb-2 absolute top-[20%] w-96 md:text-3xl md:w-[80%] lg:text-5xl xl:6xl">
                       {movie.title}
                     </h1>
-                    <p className="w-44 text-justify text-[7px] absolute top-[32%] md:text-[10px] md:w-56 md:mt-3">
+                    <p className="w-44 text-justify text-[7px] absolute top-[32%] md:text-[10px] md:w-56 md:mt-3 lg:text-[16px] lg:w-[400px] mb-40">
                       {movie.overview}
                     </p>
                     <IoMdStar className="inline text-[#FFD700] text-[12px] absolute top-[65%] md:mt-9" />
@@ -77,7 +76,7 @@ const Home = () => {
         <MovieList movies={popularMove} />
       </div>
       {/* Trending Movies */}
-      <div className="mt-6">
+      <div className="mt-6 mb-20">
         <h1 className="text-lg pl-6 pt-2">Trending Movies</h1>
         <MovieList movies={TopRated} />
       </div>

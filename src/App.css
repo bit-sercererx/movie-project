@@ -80,3 +80,13 @@ body {
     transform: rotate(360deg);
   }
 }
+#backgroundActor {
+  background: rgb(1, 18, 44);
+  background: linear-gradient(
+    90deg,
+    rgba(1, 18, 44, 0) 0%,
+    rgba(1, 18, 44, 0.74226187056854) 10%,
+    rgba(1, 18, 44, 0.9271358201483718) 24%,
+    rgba(1, 18, 44, 1) 33%
+  );
+}
